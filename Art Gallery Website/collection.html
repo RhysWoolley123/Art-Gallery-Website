@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wally's Art Museum</title>
+        <meta charset="UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+        <style>
+            body{
+                margin:0px;
+                background-color:#f1f1f1;
+            }
+            #top_bar{
+                height:45px;
+                width:100%;
+                background-color:#333333;
+                border:1px solid black;
+                position:fixed;
+                margin:0px;
+                top:0px;
+                min-width:1330px;
+            }
+            #top_bar_left{
+                margin:0px;
+                width:20%;
+                height:100%;
+                float:left;
+            }
+            #top_bar_left h1{
+                color:#fff;
+                font-family:'Indie Flower', cursive;
+                font-size:1.4em;
+                margin:0px;
+                padding-top:10px;
+                padding-left:10px;
+            }
+            #top_bar_left a:link, #top_bar_left a:visited{
+                display:block;
+                height:100%;
+                text-decoration:none;
+            }
+            #top_bar_left a:hover, #top_bar_left a:active{
+                background-color:#272727;
+            }
+            #top_bar_right{
+                margin:0px;
+                width:80%;
+                height:100%;
+                display:inline;
+                float:right;
+            }
+            #top_bar_right ul{
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                overflow:hidden;
+                height:100%;
+                color:#4e4e4e;
+                font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+                font-size:0.7em;
+            }
+            #top_bar_right li{
+                float:left;
+                height:100%;
+                border-left:1px solid #4e4e4e;
+            }
+            #top_bar_right .end{
+                border-right:1px solid #4e4e4e;
+            }
+            #top_bar_right a:link, #top_bar_right a:visited{
+                display:block;
+                width:100px;
+                height:100%;
+                font-weight:bold;
+                color:#c4c4c4;
+                background-color:#333333;
+                text-align:center;
+                padding:4px;
+                text-decoration:none;
+                padding-top:15px;
+            }
+            #top_bar_right a:hover, #top_bar_right a:active{
+                background-color:#272727;
+                text-decoration:underline;
+            }
+            #container{
+                margin-top:70px;
+                width:90%;
+                height:100%;
+                min-width:1200px;
+                margin-left:auto;
+                margin-right:auto;
+                overflow:hidden;
+            }
+            #main_container{
+                width:75%;
+                border-bottom:1px solid gray;
+                border-top:1px solid gray;
+                border-right:1px solid gray;
+                border-left:1px solid gray;
+                border-radius:0.9em;
+                background-color:white;
+                height:100%;
+                float:left;
+            }
+            #right_container{
+                width:23%;
+                height:100px;
+                float:right;
+                margin:5px;
+                padding:5px;
+            }
+            #main_container_right{
+                width:78%;
+                margin-left:18%;
+                padding:2%;
+                padding-bottom:0px;
+            }
+            #left_container{
+                height:100%;
+                width:15%;
+                float:left;
+                margin:5px;
+                padding:5px;
+                min-width:145px;
+            }
+            #left_container ul{
+                margin:0px;
+                list-style-type:none;
+                padding:0;
+                overflow:hidden;
+                color:#4e4e4e;
+                font-family:'Abel', sans-serif;
+                font-size:0.9em;
+            }
+            #left_container a:link, #left_container a:visited{
+                display:block;
+                width:100%;
+                height:14px;
+                font-weight:bold;
+                color:#3b3b3b;
+                text-align:left;
+                padding:4px;
+                text-decoration:none;
+            }
+            #left_container a:hover, #top_bar_right a:active{
+                text-decoration:underline;
+            }
+            #left_container  h1{
+                color:#4e4e4e;
+                font-family:'Abel', sans-serif;
+                font-size:1em;
+                margin:0px;
+                margin-top:15px;
+                border-bottom:1px solid black;
+                text-align:right;
+                color:#000;
+            }
+            #footer{
+                height:150px;
+                width:100%;
+                background-color:#333333;
+                border-top:3px solid black;
+                margin-top:25px;
+                bottom:0px;
+                min-width:1200px;
+            }
+            #main_container_right .title{
+                margin:0px;
+                text-align:center;
+                font-family:'Indie Flower', cursive;
+                font-size:2em;
+            }
+            #main_container_right h2{
+                font-family:'Abel', sans-serif;
+                color:#035686;
+                font-size:1.3em;
+                margin-bottom:4px;
+            }
+            #main_container_right p{
+                text-align:justify;
+                font-family:'Abel', sans-serif;
+                font-size:1em;
+                margin-top:0px;
+            }
+			#main_container_right img{
+				border:1px solid black;
+				margin-left:25%;
+				margin-right:25%;
+			}
+            #right_container h3{
+                font-family:'Abel', sans-serif;
+                color:#035686;
+                font-size:1.3em;
+                margin-bottom:4px;
+            }
+            #right_container p{
+                text-align:justify;
+                font-family:'Abel', sans-serif;
+                font-size:1em;
+                margin-top:0px;
+            }
+            #footer .footer_inner{
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:20px;
+                height:70%;
+                width:60%;
+                min-width:600px;
+            }
+            #footer .footer_left{
+                width:15%;
+                height:100%;
+                float:left;
+            }
+            #footer .footer_middle{
+                width:15%;
+                height:100%;
+                float:left;
+            }
+            #footer .footer_right{
+                width:25%;
+                height:100%;
+                padding-right:150px;
+                float:right;
+            }
+            #footer .footer_left a:link, 
+            #footer .footer_left a:visited, 
+            #footer .footer_middle a:link, 
+            #footer .footer_middle a:visited, 
+            #footer .footer_right a:link, 
+            #footer .footer_right a:visited{
+                display:block;
+                width:100%;
+                height:20px;
+                color:#c4c4c4;
+                text-align:left;
+                padding:4px;
+                text-decoration:none;
+                font-family:'Abel', sans-serif;
+            }
+            #footer .footer_left a:hover, 
+            #footer .footer_middle a:hover, 
+            #footer .footer_right a:hover{
+                text-decoration:underline;
+            }
+            #footer .footer_left ul, 
+            #footer .footer_middle ul, 
+            #footer .footer_right ul{
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                overflow:hidden;
+                height:100%;
+                font-size:0.8em;
+            }
+            #footer .copyright{
+                margin:0px;
+                padding-right:30px;
+                color:gray;
+                font-style:italic;
+                font-family:'Abel', sans-serif;
+                font-size:0.9em;
+                text-align:right;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top_bar">
+            <div id="top_bar_left">
+                <a href="testlink"><h1>Wally's Art Museum</h1></a>
+            </div>
+            <div id="top_bar_right">
+                <ul>
+                    <li><a href="Final Project.html">Home</a></li>
+                    <li><a href="Activities.html">Activities</a></li>
+                    <li><a href="Collection.html">Collection</a></li>
+                    <li class="end"><a href="Contacts.html">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="container">
+            <div id="main_container">
+                <div id="left_container">
+                    <h1>Artists</h1>
+					<h1>Contemporary    </h1>
+                    <ul>
+                        <li><a href="http://www.artnet.com/artists/luo-zhongli/">- Luo Zhongli</a></li>
+                        <li><a href="http://www.artnet.com/artists/cecily-brown/">- Cecily Brown</a></li>
+                    </ul>
+                    <h1>Sculptures  </h1>
+                    <ul>
+                        <li><a href="http://www.artnet.com/artists/damien-hirst/">- Damien Hirst</a></li>
+                        <li><a href="http://www.artnet.com/artists/pablo-picasso/">- Pablo Picasso</a></li>
+                        <li><a href="http://www.artnet.com/artists/antony-gormley/">- Antony Gormley</a></li>
+                        <li><a href="http://www.artnet.com/artists/lee-ufan/">- Lee Ufan</a></li> 
+                    </ul>
+                    <h1>Abstract  </h1>
+                    <ul>
+                        <li><a href="http://www.artnet.com/artists/joan-mir%C3%B3/">- Joan Miro</a></li>
+                        <li><a href="http://www.artnet.com/artists/joan-mitchell/">- Joan Mitchell</a></li>
+                        <li><a href="http://www.artnet.com/artists/frank-stella/">- Frank Stella</a></li>
+                        <li><a href="http://www.artnet.com/artists/helen-frankenthaler/">- Helen Frankentheler</a></li>                        
+                    </ul>
+                    <h1>Futurism  </h1>
+                    <ul>
+                        <li><a href="http://www.artnet.com/artists/david-bomberg/">- David Bomberg</a></li>
+                        <li><a href="http://www.artnet.com/artists/joseph-stella/">- Joseph Stella</a></li>
+                        <li><a href="http://www.artnet.com/artists/umberto-boccioni/">- Umberto Boccioni</a></li>
+                    </ul>
+                    <h1>Renaissance  </h1>
+                    <ul>
+                        <li><a href="http://www.artnet.com/artists/rapha%C3%ABl-5/">- Raphael</a></li>
+                        <li><a href="http://www.artnet.com/artists/fra-angelico/">- Fra Angelico</a></li>
+                        <li><a href="http://www.artnet.com/artists/paolo-veronese/">- Paolo Veronese</a></li>
+                        <li><a href="http://www.artnet.com/artists/claude-lorrain/">- Claude Lorrain</a></li>
+                    </ul>
+                    
+                </div>
+                <div id="main_container_right">
+                     
+                     <h2>Collection</h2>
+					 <a><img src="raphaelArt.jpg" alt="playdough" width="200px"></a>
+                     <p>
+						Artist: Raphael
+                    </p>
+					<p>
+						Title: Portrait of a young lady with pearls and palm branch
+                    </p>
+					<p>
+						Size: 52.5 x 27.5 cm. (20.7 x 10.8 in.)
+                    </p>
+					<a><img src="helenArt2.jpg" alt="playdough" width="200px"></a>
+                     <p>
+						Artist: Helen Frankentheler
+                    </p>
+					<p>
+						Title: Untitled ("Painted Book"), 1974
+                    </p>
+					<p>
+						Size: 11"H 11.75"W 1.5"D (closed)15.5"H 16"W 2.5"D (framed)
+                    </p>
+					<a><img src="JoanArt.jpg" alt="playdough" width="200px"></a>
+                     <p>
+						Artist: Joan Miro
+                    </p>
+					<p>
+						Title: L'Oiseleur et sa Compagne
+                    </p>
+					<p>
+						Size: 31.5 x 24.75 in. (80 x 62.9 cm.)
+                    </p>
+                    <a><img src="leeArt.jpg" alt="playdough" width="200px"></a>
+                     <p>
+						Artist: Lee Ufan
+                    </p>
+					<p>
+						Title: Relatum
+                    </p>
+					<p>
+						Size: Canvas h.194 x w.161 x d.5 cm Iron rod 140 x diam. 3 cm Stone 30 x 25 x 25 cm
+                    </p>
+    
+                    
+                </div>
+            </div>
+            <div id="right_container">
+                 <h3>Museum News</h3>
+                 <p> Our art stock is constantly changing to bring new art and artists into our gsllery for people to see. 
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer_inner">
+                <div class="footer_left">
+                    
+                </div>
+                <div class="footer_middle">
+                    
+                </div>
+                <div class="footer_right">
+                    
+                </div>
+            </div>
+            <div class="copyright">©2021 Wally'sArt.co.uk</div>
+        </div>
+    </body>
+</html>
